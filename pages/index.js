@@ -4,10 +4,10 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
-// import jwt from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 
 const inter = Inter({ subsets: ["latin"] });
-// const secret_key = "tastingcoffee";
+const secret_key = "tastingcoffee";
 const SelectionTop = (props) => {
   return (
     <>
@@ -24,6 +24,7 @@ const SelectionTop = (props) => {
         <main className={styles.main}>
           <div className={styles.main_contents}>
             <div className={styles.select}>
+              <h1 className={styles.heading_title}>SELECT</h1>
               {props.allItems.map((beans) => (
                 <div className={styles.select_list} key={beans._id}>
                   <div className={styles.select_btn_box}>

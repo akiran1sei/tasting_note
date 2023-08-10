@@ -187,6 +187,7 @@ const UpDateItem = (props) => {
         <Header />
         <main className={styles.main}>
           <div className={styles.edit_page}>
+            <h1 className={styles.heading_title}>UP DATE</h1>
             <div className={`${styles.edit} ${styles.open}`}>
               <div
                 className={

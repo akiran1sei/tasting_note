@@ -48,6 +48,7 @@ const DeleteItem = (props) => {
         <Header />
         <main className={styles.main}>
           <div className={styles.delete_page}>
+            <h1 className={styles.heading_title}>DELETE</h1>
             <div className={styles.browse}>
               <div className={styles.delete_data}>
                 <div className={styles.delete_main}>

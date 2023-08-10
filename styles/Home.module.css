@@ -96,6 +96,13 @@
   margin: 0 1rem;
 }
 
+/* 
+-----heading_title-----
+ */
+.heading_title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
 /*
 
 ----------personal----------
@@ -301,14 +308,7 @@
 ----------select ----------
 
 */
-.select {
-  padding: 5rem 0;
-}
 
-.select_title {
-  font-size: 36px;
-  text-align: center;
-}
 /*-----.select_list-----*/
 .select_list {
   width: 100%;
@@ -354,10 +354,6 @@
   font-size: 16px;
   color: var(--color-bg-yellow);
 }
-
-/* .select_number > .select_item_title {
-  font-size: 27px !important;
-} */
 
 .select_aroma_value {
   font-size: 14px;
@@ -726,7 +722,11 @@ delete_popup
   justify-content: space-between;
   position: relative;
 }
-
+.edit_overall,
+.browse_overall,
+.delete_overall {
+  justify-content: flex-start !important;
+}
 .edit_item_value,
 .browse_item_value,
 .delete_item_value {
@@ -835,7 +835,7 @@ delete_popup
   padding: 1rem;
   color: var(--color-font-base);
   border-radius: 2%;
-  border: 5px solid var(--color-yellow);
+  border: 3px solid var(--color-yellow);
 }
 
 /* edit_total */
@@ -901,18 +901,26 @@ delete_popup
 -----delete_return_btn-----
  */
 .edit_submit_btn,
-.edit_return_btn,
-.browse_return_btn,
 .browse_edit_btn,
-.delete_return_btn,
 .delete_edit_btn {
   background: var(--color-bg-yellow);
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   color: var(--color-font-white);
   border-radius: 5%;
   font-size: x-large;
-  box-shadow: 3px 3px 3px #333;
-  /* transform: translateX(50%); */
+  box-shadow: 3px 3px 3px #3333334d;
+}
+
+.edit_return_btn,
+.browse_return_btn,
+.delete_return_btn {
+  background: var(--color-bg-base);
+  padding: 0.5rem 1rem;
+  color: var(--color-font-yellow);
+  border: 1px solid var(--color-yellow);
+  border-radius: 5%;
+  font-size: x-large;
+  box-shadow: 3px 3px 3px #3333334d;
 }
 .edit_submit_btn:active,
 .edit_return_btn:active,
@@ -1119,4 +1127,45 @@ grid-layout 768px
 .browse_yellow_color,
 .delete_yellow_color {
   color: var(--color-font-yellow);
+}
+
+/* 
+----------Login---------- 
+----------Register---------- 
+*/
+.login_input_box,
+.register_input_box {
+  max-width: 300px;
+  margin: 0 auto;
+}
+.login_input,
+.register_input {
+  margin-top: 0 !important;
+  padding-left: 0.5rem;
+}
+.login_btn_box,
+.register_btn_box {
+  width: 100%;
+  text-align: center;
+}
+.login_btn,
+.register_btn {
+  background: var(--color-bg-base);
+  padding: 0.5rem 1rem;
+  color: var(--color-font-yellow);
+  border: 1px solid var(--color-yellow);
+  border-radius: 5%;
+  font-size: x-large;
+  box-shadow: 3px 3px 3px #3333334d;
+}
+.login_btn:active,
+.register_btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: inset 3px 3px 3px var(--color-black);
+  transition-duration: 0.1s;
+}
+.login_paragraph,
+.register_paragraph {
+  padding: 1rem 0;
+  text-align: center;
 }

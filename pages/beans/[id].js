@@ -13,11 +13,12 @@ const CoffeeSingleItem = (props) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <p>{props.singleBeans._id}</p> */}
+
       <div className={styles.container}>
         <Header />
         <main className={styles.main}>
           <div className={styles.browse_page}>
+            <h1 className={styles.heading_title}>BROWSE</h1>
             <div className={styles.browse}>
               <div className={styles.browse_data}>
                 <div className={styles.browse_main}>

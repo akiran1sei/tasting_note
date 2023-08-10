@@ -160,6 +160,7 @@ const New = () => {
       <div className={styles.container}>
         <Header />
         <main className={styles.main}>
+          <h1 className={styles.heading_title}>CREATE</h1>
           <div className={styles.edit_page}>
             <div className={`${styles.edit} ${styles.open}`}>
               <div
