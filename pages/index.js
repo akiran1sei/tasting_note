@@ -273,7 +273,7 @@ const SelectionTop = (props) => {
 };
 export default SelectionTop;
 export const getServerSideProps = async () => {
-  const response = await fetch("http://localhost:3000/api/beans/readall");
+  const response = await fetch("https://tasiing-note.vercel.app/api/beans/readall");
   const allItems = await response.json();
 
   return {

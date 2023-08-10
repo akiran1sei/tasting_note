@@ -58,7 +58,7 @@ const New = () => {
       Number(defects);
     try {
       const response = // フォームの入力値をサーバーに送信する
-        await fetch("http://localhost:3000/api/beans/create", {
+        await fetch("https://tasiing-note.vercel.app/api/beans/create", {
           method: "POST",
           body: JSON.stringify({
             coffee: coffee,
@@ -207,7 +207,7 @@ const New = () => {
                 <form
                   onSubmit={handleSubmit}
                   className={styles.edit_main}
-                  // action={"http://localhost:3000/api/beans/create"}
+                  // action={"https://tasiing-note.vercel.app/api/beans/create"}
                   // method="post"
                 >
                   <div className={styles.edit_list}>
