@@ -4,12 +4,7 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
-
-// import { useRouter } from "next/router";
-
 // import jwt from "jsonwebtoken";
-
-// import { Beans } from "@/components/Beans";
 
 const inter = Inter({ subsets: ["latin"] });
 // const secret_key = "tastingcoffee";
@@ -31,12 +26,7 @@ const SelectionTop = (props) => {
             <div className={styles.select}>
               {props.allItems.map((beans) => (
                 <div className={styles.select_list} key={beans._id}>
-                  {/* <div className={styles.select_number}>
-                    <p>{}</p>
-                  </div> */}
                   <div className={styles.select_btn_box}>
-                    {/* <div className={styles.yellow_shadow}></div> */}
-
                     <button className={styles.delete_btn}>
                       <Link href={`beans/delete/${beans._id}`} passHref>
                         <Image
@@ -48,7 +38,6 @@ const SelectionTop = (props) => {
                         />
                       </Link>
                     </button>
-
                     <button className={styles.select_btn}>
                       <Link href={`beans/update/${beans._id}`} passHref>
                         <Image

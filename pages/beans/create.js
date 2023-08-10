@@ -4,8 +4,6 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
 const inter = Inter({ subsets: ["latin"] });
-// import Image from "next/image";
-// import Link from "next/link";
 
 const New = () => {
   const [coffee, setCoffee] = useState("");
