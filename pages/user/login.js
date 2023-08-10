@@ -1,5 +1,5 @@
 // pages/user/login.js（ログインページ）
-
+import { Header } from "@/components/Header";
 import Head from "next/head";
 import { useState } from "react";
 import { Inter } from "next/font/google";
@@ -7,10 +7,11 @@ import styles from "@/styles/Home.module.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Login() {
+const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
       const response = await fetch("http://localhost:3000/api/user/login", {
         method: "POST",
@@ -41,34 +42,53 @@ export default function Login() {
 
       <div className={styles.container}>
         {/* <Login /> */}
+        <Header />
         <main className={styles.main}>
-          <h1 className={styles.title}>Tasting Note</h1>
-          <div className={styles.login_btn_box}>
-            <form onSubmit={handleSubmit}>
-              <input
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                type="text"
-                name="email"
-                placeholder="メールアドレス"
-                required
-              />
-              <input
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                type="text"
-                name="password"
-                placeholder="パスワード"
-                required
-              />
-              <button className={styles.login_btn}>
-                <a href="">ログイン</a>
-              </button>
-            </form>
+          <div className={styles.main_contents}>
+            <h1 className={styles.heading_title}>LOGIN</h1>{" "}
+            <div className={styles.login_input_box}>
+              <form>
+                <p className={styles.login_paragraph}>
+                  メールアドレス
+                  <br />
+                  <input
+                    className={styles.login_input}
+                    value={email}
+                    width={300}
+                    height={50}
+                    onChange={(e) => setEmail(e.target.value)}
+                    type="text"
+                    name="email"
+                    placeholder="メールアドレス"
+                    required
+                  />
+                </p>
+                <p className={styles.login_paragraph}>
+                  パスワード
+                  <br />
+                  <input
+                    className={styles.login_input}
+                    width={300}
+                    height={50}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    type="text"
+                    name="password"
+                    placeholder="パスワード"
+                    required
+                  />
+                </p>
+                <div className={styles.login_btn_box}>
+                  <button className={styles.login_btn} onClick={handleSubmit}>
+                    ログイン
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
         </main>
       </div>
     </>
   );
-}
-Login();
+};
+export default Login;
