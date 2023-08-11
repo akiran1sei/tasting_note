@@ -253,7 +253,7 @@ export default CoffeeSingleItem;
 
 export const getServerSideProps = async (context) => {
   const response = await fetch(
-    `https://tasiing-note.vercel.app/api/beans/${context.query.id}`
+    `https://tasting-note.vercel.app/api/beans/${context.query.id}`
   );
   const singleBeans = await response.json();
 

@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://tasiing-note.vercel.app/api/user/register", {
+      const response = await fetch("https://tasting-note.vercel.app/api/user/register", {
         method: "POST",
         headers: {
           Accept: "application/json",

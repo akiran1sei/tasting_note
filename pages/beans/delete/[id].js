@@ -11,7 +11,7 @@ const DeleteItem = (props) => {
 
     try {
       const response = await fetch(
-        `https://tasiing-note.vercel.app/api/beans/delete/${props.singleBeans._id}`,
+        `https://tasting-note.vercel.app/api/beans/delete/${props.singleBeans._id}`,
         {
           method: "POST",
           headers: {
@@ -287,7 +287,7 @@ export default DeleteItem;
 export const getServerSideProps = async (context) => {
   console.log(context);
   const response = await fetch(
-    `https://tasiing-note.vercel.app/api/beans/${context.query.id}`
+    `https://tasting-note.vercel.app/api/beans/${context.query.id}`
   );
   const singleBeans = await response.json();
 
