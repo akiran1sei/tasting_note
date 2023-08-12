@@ -1,0 +1,27 @@
+// utils/auth.js
+import jwt from "jsonwebtoken";
+const secret_key = "nextmarket";
+
+const auth = (handler) => {
+  return async (req, res) => {
+    if (req.method === "GET") {
+      return handler(req, res);
+    }
+    const token = await req.headers.authorization.split(" ")[1];
+    if (!token) {
+      return res.status(401).json({ message: "トークンがありません" });
+    }
+    try {
+      // const decoded = jwt.verify(token, secret_key, { algorithms: ["HS256"] });
+      const decode = jwt.verify(token, secret_key, { algorithms: ["HS256"] });
+      req.body.email = decode.email;
+      return handler(req, res);
+    } catch (err) {
+      return res
+        .status(401)
+        .json({ message: "トークンが正しくないので、ログインしてください" });
+    }
+  };
+};
+
+export default auth;
