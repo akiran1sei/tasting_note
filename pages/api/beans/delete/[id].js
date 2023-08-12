@@ -1,22 +1,21 @@
 import connectDB from "../../../../utils/database";
 import { BeansModel } from "../../../../utils/schemaModels";
-// import auth from "../../../../utils/auth";
+import auth from "../../../../utils/auth";
 
 const Delete = async (req, res) => {
   try {
     await connectDB();
-    // const singleBeans =
-    await BeansModel.findById(req.query.id);
-    // if (singleBeans.email === req.body.email) {
+    const singleBeans = await BeansModel.findById(req.query.id);
+    if (singleBeans.email === req.body.email) {
     await BeansModel.deleteOne({ _id: req.query.id });
     return res.status(200).json({ message: "アイテム削除成功" });
-    // } else {
-    //   throw new Error();
-    // }
+    } else {
+      throw new Error();
+    }
   } catch (err) {
     return res.status(400).json({ message: "アイテム削除失敗" });
   }
 };
 
-// export default auth(deleteItem);
-export default Delete;
+export default auth(Delete);
+// export default Delete;
