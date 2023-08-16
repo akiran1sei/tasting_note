@@ -1,5 +1,6 @@
 import styles from "@/styles/Home.module.css";
 import React, { useState } from "react";
+import Head from "next/head";
 import Link from "next/link";
 
 export function Header() {
@@ -10,6 +11,13 @@ export function Header() {
   };
 
   return (
+    <>
+      <Head>
+      
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+         <link href="https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap" rel="stylesheet"/>  
+        </Head>
     <header className={styles.header}>
       <div className={styles.header_title}>
         <h1 className={styles.title}>Tasting Note</h1>
@@ -40,7 +48,7 @@ export function Header() {
               <div className={styles.keyboard_front}></div>
               <div className={styles.keyboard_left}></div>
             </div> */}
-            <Link href={"/"}>SELECT</Link>
+            <Link href={"/beans/selection"}>SELECT</Link>
           </li>
           <li className={styles.menu_item}>
             <Link href={"/beans/create"}>NEW</Link>
@@ -65,5 +73,6 @@ export function Header() {
         </ul> */}
       </nav>
     </header>
+    </>
   );
 }
