@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
+import { useRouter } from "next/router";
 const inter = Inter({ subsets: ["latin"] });
 
 const New = () => {
@@ -39,7 +40,7 @@ const New = () => {
   // const [total, setTotal] = useState("");
   const [impression, setImpression] = useState("");
   const [isEditContents, setIsEditContents] = useState(false);
-
+  const router = useRouter();
   const handleEditListButton = () => {
     setIsEditContents(!isEditContents);
   };
@@ -94,7 +95,7 @@ const New = () => {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            // authorization: `Bearer ${localStorage.getItem("token")}`,
+            authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
       // バリデーション
@@ -138,6 +139,7 @@ const New = () => {
         setError(null);
         const jsonData = await response.json();
         alert(jsonData.message);
+        router.push("/beans/selection");
       }
     } catch (error) {
       alert("アイテム作成失敗");
