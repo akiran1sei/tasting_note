@@ -29,7 +29,7 @@ const SelectionTop = (props) => {
                 <div className={styles.select_list} key={beans._id}>
                   <div className={styles.select_btn_box}>
                     <button className={styles.delete_btn}>
-                      <Link href={`beans/delete/${beans._id}`} passHref>
+                      <Link href={`delete/${beans._id}`} passHref>
                         <Image
                           src="../images/delete_FILL0_wght400_GRAD0_opsz48.svg"
                           alt="削除ボタン"
@@ -40,7 +40,7 @@ const SelectionTop = (props) => {
                       </Link>
                     </button>
                     <button className={styles.select_btn}>
-                      <Link href={`beans/update/${beans._id}`} passHref>
+                      <Link href={`update/${beans._id}`} passHref>
                         <Image
                           src="../images/edit_FILL0_wght400_GRAD0_opsz48.svg"
                           alt="編集ボタン"
@@ -51,7 +51,7 @@ const SelectionTop = (props) => {
                       </Link>
                     </button>
                     <button className={styles.select_btn}>
-                      <Link href={`beans/${beans._id}`} passHref>
+                      <Link href={`${beans._id}`} passHref>
                         <Image
                           src="../images/visibility_FILL0_wght400_GRAD0_opsz48.svg"
                           alt="閲覧ボタン"
@@ -273,7 +273,9 @@ const SelectionTop = (props) => {
 };
 export default SelectionTop;
 export const getServerSideProps = async () => {
-  const response = await fetch("https://tasting-note.vercel.app/api/beans/readall");
+  const response = await fetch(
+    "https://tasting-note.vercel.app/api/beans/readall"
+  );
   const allItems = await response.json();
 
   return {
