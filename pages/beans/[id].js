@@ -4,7 +4,6 @@ import Link from "next/link";
 import styles from "@/styles/Home.module.css";
 
 const CoffeeSingleItem = (props) => {
-  console.log(props);
   return (
     <>
       <Head>
