@@ -1,6 +1,6 @@
 // utils/auth.js
 import jwt from "jsonwebtoken";
-const secret_key = "nextmarket";
+const secret_key = "tastingcoffee";
 
 const auth = (handler) => {
   return async (req, res) => {

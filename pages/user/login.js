@@ -2,6 +2,7 @@
 import { Header } from "@/components/Header";
 import Head from "next/head";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
@@ -10,23 +11,28 @@ const inter = Inter({ subsets: ["latin"] });
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://tasting-note.vercel.app/api/user/login", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: email,
-          password: password,
-        }),
-      });
+      const response = await fetch(
+        "https://tasting-note.vercel.app/api/user/login",
+        {
+          method: "POST",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+          }),
+        }
+      );
       const jsonData = await response.json();
       localStorage.setItem("token", jsonData.token);
       alert(jsonData.message);
+      router.push("/beans/selection");
     } catch (error) {
       alert("ログイン失敗");
     }

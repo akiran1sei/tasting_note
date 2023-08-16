@@ -3,6 +3,7 @@ import { Header } from "../../../components/Header";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -64,7 +65,7 @@ const UpDateItem = (props) => {
 
   const [impression, setImpression] = useState(props.singleBeans.impression);
   const [isEditContents, setIsEditContents] = useState(false);
-
+  const router = useRouter();
   const handleEditListButton = () => {
     setIsEditContents(!isEditContents);
   };
@@ -89,7 +90,7 @@ const UpDateItem = (props) => {
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json",
-              // authorization: `Bearer ${localStorage.getItem("token")}`,
+              authorization: `Bearer ${localStorage.getItem("token")}`,
             },
             body: JSON.stringify({
               coffee: coffee,
@@ -165,6 +166,7 @@ const UpDateItem = (props) => {
         setError(null);
         const jsonData = await response.json();
         alert(jsonData.message);
+        router.push("/beans/selection");
       }
     } catch (error) {
       alert("アイテム編編集失敗");
