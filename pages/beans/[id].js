@@ -228,12 +228,12 @@ const CoffeeSingleItem = (props) => {
                   <div className={styles.browse_return_btn_box}>
                     <button className={styles.browse_return_btn}>戻る</button>
                     <button className={styles.browse_edit_btn}>
-                      <Link href={`update/${props.singleBeans._id}`} passHref>
+                      <Link href={`/beans/update/${props.singleBeans._id}`}>
                         編集する
                       </Link>
                     </button>
                     <button className={styles.browse_edit_btn}>
-                      <Link href={`delete/${props.singleBeans._id}`} passHref>
+                      <Link href={`/beans/delete/${props.singleBeans._id}`}>
                         削除する
                       </Link>
                     </button>
@@ -252,7 +252,7 @@ export default CoffeeSingleItem;
 
 export const getServerSideProps = async (context) => {
   const response = await fetch(
-    `https://tasting-note.vercel.app/api/beans/${context.query.id}`
+    `http://localhost:3000/api/beans/${context.query.id}`
   );
   const singleBeans = await response.json();
 
