@@ -312,7 +312,7 @@ export default DeleteItem;
 
 export const getServerSideProps = async (context) => {
   const response = await fetch(
-    `https://tasting-note.vercel.app/api/beans/delete/${context.query.id}`
+    `https://tasting-note.vercel.app/api/beans/${context.query.id}`
   );
   const singleBeans = await response.json();
 
