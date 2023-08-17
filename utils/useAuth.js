@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import jwt from "jsonwebtoken";
 
-const secret_key = "tastingcoffee";
+const secret_key = "tasting_coffee";
 
 const useAuth = () => {
   const [loginUser, setLoginUser] = useState("");
@@ -17,9 +17,7 @@ const useAuth = () => {
     }
     try {
       const decoded = jwt.verify(token, secret_key, { algorithms: ["HS256"] });
-      // const decoded = jwt.decode(token, { complete: true });
-      // console.log(decoded);
-      setLoginUser(decoded);
+      setLoginUser(decoded.email);
     } catch (err) {
       router.push("/user/login");
     }

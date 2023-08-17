@@ -1,6 +1,6 @@
 // utils/auth.js
 import jwt from "jsonwebtoken";
-const secret_key = "tastingcoffee";
+const secret_key = "tasting_coffee";
 
 const auth = (handler) => {
   return async (req, res) => {
@@ -12,9 +12,8 @@ const auth = (handler) => {
       return res.status(401).json({ message: "トークンがありません" });
     }
     try {
-      // const decoded = jwt.verify(token, secret_key, { algorithms: ["HS256"] });
-      const decode = jwt.verify(token, secret_key, { algorithms: ["HS256"] });
-      req.body.email = decode.email;
+      const decoded = jwt.verify(token, secret_key, { algorithms: ["HS256"] });
+      req.body.email = decoded.email;
       return handler(req, res);
     } catch (err) {
       return res

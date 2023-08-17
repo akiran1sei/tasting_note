@@ -2,7 +2,7 @@
 import connectDB from "@/utils/database";
 import { UserModel } from "@/utils/schemaModels";
 import jwt from "jsonwebtoken";
-const secret_key = "tastingcoffee";
+const secret_key = "tasting_coffee";
 const loginUser = async (req, res) => {
   try {
     await connectDB();
