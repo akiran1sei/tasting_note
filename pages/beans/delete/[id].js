@@ -289,7 +289,7 @@ const DeleteItem = (props) => {
                           <button>削除する</button>
                         </form>
                         <button>
-                          <Link href={"/"} passHref>
+                          <Link href={"/beans/selection"} passHref>
                             キャンセル
                           </Link>
                         </button>
@@ -311,7 +311,6 @@ const DeleteItem = (props) => {
 export default DeleteItem;
 
 export const getServerSideProps = async (context) => {
-  console.log(context);
   const response = await fetch(
     `https://tasting-note.vercel.app/api/beans/${context.query.id}`
   );

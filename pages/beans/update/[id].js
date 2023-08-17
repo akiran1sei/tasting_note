@@ -966,7 +966,7 @@ const UpDateItem = (props) => {
                         編集する
                       </button>
                       <button className={styles.edit_return_btn}>
-                        <Link href={"/"}>戻る</Link>
+                        <Link href={"/beans/selection"}>戻る</Link>
                       </button>
                     </div>
                   </form>
