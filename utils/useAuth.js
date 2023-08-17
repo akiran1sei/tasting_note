@@ -9,7 +9,7 @@ const secret_key = "tasting_coffee";
 const useAuth = () => {
   const [loginUser, setLoginUser] = useState("");
   const router = useRouter();
-  //
+
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (!token) {
