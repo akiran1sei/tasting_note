@@ -32,7 +32,7 @@ const Register = () => {
       );
       const jsonData = await response.json();
       alert(jsonData.message);
-      router.push("/login");
+      router.push("login");
     } catch (err) {
       alert("ユーザー登録失敗");
     }
