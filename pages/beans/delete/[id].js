@@ -32,7 +32,6 @@ const DeleteItem = (props) => {
 
   const loginUser = useAuth();
 
-  console.log(useAuth());
   if (loginUser.email === props.singleBeans.email) {
     return (
       <>

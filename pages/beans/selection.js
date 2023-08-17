@@ -4,10 +4,10 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import jwt from "jsonwebtoken";
+// import jwt from "jsonwebtoken";
 
 const inter = Inter({ subsets: ["latin"] });
-const secret_key = "tastingcoffee";
+// const secret_key = "tasting_coffee";
 const SelectionTop = (props) => {
   return (
     <>
