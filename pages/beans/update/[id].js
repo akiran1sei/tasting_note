@@ -10,61 +10,61 @@ import Link from "next/link";
 const inter = Inter({ subsets: ["latin"] });
 
 const UpDateItem = (props) => {
-  const [coffee, setCoffee] = useState(props.singleBeans.coffee);
-  const [roast, setRoast] = useState(props.singleBeans.roast);
+  const [coffee, setCoffee] = useState(props.singleItem.coffee);
+  const [roast, setRoast] = useState(props.singleItem.roast);
   const [roastMessage, setRoastMessage] = useState(
-    props.singleBeans.roastMessage
+    props.singleItem.roastMessage
   );
-  const [aromaDry, setAromaDry] = useState(props.singleBeans.aromaDry);
-  const [aromaCrust, setAromaCrust] = useState(props.singleBeans.aromaCrust);
-  const [aromaBreak, setAromaBreak] = useState(props.singleBeans.aromaBreak);
+  const [aromaDry, setAromaDry] = useState(props.singleItem.aromaDry);
+  const [aromaCrust, setAromaCrust] = useState(props.singleItem.aromaCrust);
+  const [aromaBreak, setAromaBreak] = useState(props.singleItem.aromaBreak);
   const [aromaMessage, setAromaMessage] = useState(
-    props.singleBeans.aromaMessage
+    props.singleItem.aromaMessage
   );
-  const [defects, setDefects] = useState(props.singleBeans.defects);
+  const [defects, setDefects] = useState(props.singleItem.defects);
   const [point, setPoint] = useState("0");
   const [score, setScore] = useState("0");
   const [defectsMessage, setDefectsMessage] = useState(
-    props.singleBeans.defectsMessage
+    props.singleItem.defectsMessage
   );
-  const [cleancap, setCleancap] = useState(props.singleBeans.cleancap);
+  const [cleancap, setCleancap] = useState(props.singleItem.cleancap);
   const [cleancapMessage, setCleancapMessage] = useState(
-    props.singleBeans.cleancapMessage
+    props.singleItem.cleancapMessage
   );
-  const [sweet, setSweet] = useState(props.singleBeans.sweet);
+  const [sweet, setSweet] = useState(props.singleItem.sweet);
   const [sweetMessage, setSweetMessage] = useState(
-    props.singleBeans.sweetMessage
+    props.singleItem.sweetMessage
   );
-  const [acidity, setAcidity] = useState(props.singleBeans.acidity);
+  const [acidity, setAcidity] = useState(props.singleItem.acidity);
   const [acidityMessage, setAcidityMessage] = useState(
-    props.singleBeans.acidityMessage
+    props.singleItem.acidityMessage
   );
   const [acidityStrength, setAcidityStrength] = useState(
-    props.singleBeans.acidityStrength
+    props.singleItem.acidityStrength
   );
-  const [mouthfeel, setMouthfeel] = useState(props.singleBeans.mouthfeel);
+  const [mouthfeel, setMouthfeel] = useState(props.singleItem.mouthfeel);
   const [mouthfeelMessage, setMouthfeelMessage] = useState(
-    props.singleBeans.mouthfeelMessage
+    props.singleItem.mouthfeelMessage
   );
   const [bodyStrength, setBodyStrength] = useState(
-    props.singleBeans.bodyStrength
+    props.singleItem.bodyStrength
   );
-  const [flavor, setFlavor] = useState(props.singleBeans.flavor);
+  const [flavor, setFlavor] = useState(props.singleItem.flavor);
   const [flavorMessage, setFlavorMessage] = useState(
-    props.singleBeans.flavorMessage
+    props.singleItem.flavorMessage
   );
-  const [after, setAfter] = useState(props.singleBeans.after);
+  const [after, setAfter] = useState(props.singleItem.after);
   const [afterMessage, setAfterMessage] = useState(
-    props.singleBeans.afterMessage
+    props.singleItem.afterMessage
   );
-  const [balance, setBalance] = useState(props.singleBeans.balance);
+  const [balance, setBalance] = useState(props.singleItem.balance);
   const [balanceMessage, setBalanceMessage] = useState(
-    props.singleBeans.balanceMessage
+    props.singleItem.balanceMessage
   );
-  const [overall, setOverall] = useState(props.singleBeans.overall);
+  const [overall, setOverall] = useState(props.singleItem.overall);
   const [error, setError] = useState();
 
-  const [impression, setImpression] = useState(props.singleBeans.impression);
+  const [impression, setImpression] = useState(props.singleItem.impression);
   const [isEditContents, setIsEditContents] = useState(false);
   const router = useRouter();
   const handleEditListButton = () => {
@@ -85,7 +85,7 @@ const UpDateItem = (props) => {
     try {
       const response = // フォームの入力値をサーバーに送信する
         await fetch(
-          `https://tasting-note.vercel.app/api/beans/update/${props.singleBeans._id}`,
+          `https://tasting-note.vercel.app/api/beans/update/${props.singleItem._id}`,
           {
             method: "POST",
             headers: {
@@ -178,7 +178,7 @@ const UpDateItem = (props) => {
     setDefects(answer);
   }
   const loginUser = useAuth();
-  if (loginUser.email === props.singleBeans.email) {
+  if (loginUser.email === props.singleItem.email) {
     return (
       <>
         <Head>
@@ -986,9 +986,9 @@ export const getServerSideProps = async (context) => {
   const response = await fetch(
     `https://tasting-note.vercel.app/api/beans/${context.query.id}`
   );
-  const singleBeans = await response.json();
+  const singleItem = await response.json();
 
   return {
-    props: singleBeans,
+    props: singleItem,
   };
 };

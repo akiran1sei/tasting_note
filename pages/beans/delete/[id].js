@@ -11,7 +11,7 @@ const DeleteItem = (props) => {
 
     try {
       const response = await fetch(
-        `https://tasting-note.vercel.app/api/beans/delete/${props.singleBeans._id}`,
+        `https://tasting-note.vercel.app/api/beans/delete/${props.singleItem._id}`,
         {
           method: "POST",
           headers: {
@@ -32,7 +32,7 @@ const DeleteItem = (props) => {
 
   const loginUser = useAuth();
 
-  if (loginUser.email === props.singleBeans.email) {
+  if (loginUser.email === props.singleItem.email) {
     return (
       <>
         <Head>
@@ -41,7 +41,7 @@ const DeleteItem = (props) => {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-        {/* <p>{props.singleBeans._id}</p> */}
+        {/* <p>{props.singleItem._id}</p> */}
         <div className={styles.container}>
           <Header />
           <main className={styles.main}>
@@ -57,7 +57,7 @@ const DeleteItem = (props) => {
                         <h3 className={styles.delete_item_title}>
                           1：珈琲豆 or 番号
                         </h3>
-                        <p>{props.singleBeans.coffee}</p>
+                        <p>{props.singleItem.coffee}</p>
                       </div>
                       <div
                         className={`${styles.delete_item} ${styles.delete_roast}`}
@@ -65,13 +65,13 @@ const DeleteItem = (props) => {
                         <h3 className={styles.delete_item_title}>
                           2：ロースト
                         </h3>
-                        <p>{props.singleBeans.roast}%</p>
+                        <p>{props.singleItem.roast}%</p>
                         <h4 className={styles.delete_item_memo}>
                           <span className={styles.delete_yellow_color}>
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.roastMessage}</p>
+                        <p>{props.singleItem.roastMessage}</p>
                       </div>
 
                       <div
@@ -82,21 +82,21 @@ const DeleteItem = (props) => {
                           <span className={styles.delete_yellow_color}>
                             ドライ：
                           </span>
-                          {props.singleBeans.aromaDry}
+                          {props.singleItem.aromaDry}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <p>
                           <span className={styles.delete_yellow_color}>
                             クラスト：
                           </span>
-                          {props.singleBeans.aromaCrust}
+                          {props.singleItem.aromaCrust}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <p>
                           <span className={styles.delete_yellow_color}>
                             ブレーク：
                           </span>
-                          {props.singleBeans.aromaBreak}
+                          {props.singleItem.aromaBreak}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <h4 className={styles.delete_item_memo}>
@@ -104,7 +104,7 @@ const DeleteItem = (props) => {
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.aromaMessage}</p>
+                        <p>{props.singleItem.aromaMessage}</p>
                       </div>
                       <div
                         className={`${styles.delete_item} ${styles.delete_defects}`}
@@ -113,7 +113,7 @@ const DeleteItem = (props) => {
                           4：欠点・瑕疵
                         </h3>
                         <p>
-                          {props.singleBeans.defects}
+                          {props.singleItem.defects}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <h4 className={styles.delete_item_memo}>
@@ -121,7 +121,7 @@ const DeleteItem = (props) => {
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.defectsMessage}</p>
+                        <p>{props.singleItem.defectsMessage}</p>
                       </div>
                       <div
                         className={`${styles.delete_item} ${styles.delete_cleancap}`}
@@ -130,7 +130,7 @@ const DeleteItem = (props) => {
                           5：カップの綺麗さ
                         </h3>
                         <p>
-                          {props.singleBeans.cleancap}
+                          {props.singleItem.cleancap}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <h4 className={styles.delete_item_memo}>
@@ -138,7 +138,7 @@ const DeleteItem = (props) => {
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.cleancapMessage}</p>
+                        <p>{props.singleItem.cleancapMessage}</p>
                       </div>
 
                       <div
@@ -146,7 +146,7 @@ const DeleteItem = (props) => {
                       >
                         <h3 className={styles.delete_item_title}>6：甘さ</h3>
                         <p>
-                          {props.singleBeans.sweet}
+                          {props.singleItem.sweet}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <h4 className={styles.delete_item_memo}>
@@ -154,7 +154,7 @@ const DeleteItem = (props) => {
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.sweetMessage}</p>
+                        <p>{props.singleItem.sweetMessage}</p>
                       </div>
 
                       <div
@@ -162,7 +162,7 @@ const DeleteItem = (props) => {
                       >
                         <h3 className={styles.delete_item_title}>7：酸の質</h3>
                         <p>
-                          {props.singleBeans.acidity}
+                          {props.singleItem.acidity}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <h4 className={styles.delete_item_memo}>
@@ -170,8 +170,8 @@ const DeleteItem = (props) => {
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.acidityMessage}</p>
-                        <p>{props.singleBeans.acidityStrength}</p>
+                        <p>{props.singleItem.acidityMessage}</p>
+                        <p>{props.singleItem.acidityStrength}</p>
                       </div>
 
                       <div
@@ -181,7 +181,7 @@ const DeleteItem = (props) => {
                           8：口に含んだ質感
                         </h3>
                         <p>
-                          {props.singleBeans.mouthfeel}
+                          {props.singleItem.mouthfeel}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <h4 className={styles.delete_item_memo}>
@@ -189,8 +189,8 @@ const DeleteItem = (props) => {
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.mouthfeelMessage}</p>
-                        <p>{props.singleBeans.bodyStrength}</p>
+                        <p>{props.singleItem.mouthfeelMessage}</p>
+                        <p>{props.singleItem.bodyStrength}</p>
                       </div>
                       <div
                         className={`${styles.delete_item} ${styles.delete_flavor}`}
@@ -199,7 +199,7 @@ const DeleteItem = (props) => {
                           9：フレーバー
                         </h3>
                         <p>
-                          {props.singleBeans.flavor}
+                          {props.singleItem.flavor}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <h4 className={styles.delete_item_memo}>
@@ -207,7 +207,7 @@ const DeleteItem = (props) => {
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.flavorMessage}</p>
+                        <p>{props.singleItem.flavorMessage}</p>
                       </div>
 
                       <div
@@ -217,7 +217,7 @@ const DeleteItem = (props) => {
                           10：後味の印象度
                         </h3>
                         <p>
-                          {props.singleBeans.after}
+                          {props.singleItem.after}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <h4 className={styles.delete_item_memo}>
@@ -225,7 +225,7 @@ const DeleteItem = (props) => {
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.afterMessage}</p>
+                        <p>{props.singleItem.afterMessage}</p>
                       </div>
                       <div
                         className={`${styles.delete_item} ${styles.delete_balance}`}
@@ -234,7 +234,7 @@ const DeleteItem = (props) => {
                           11：バランス
                         </h3>
                         <p>
-                          {props.singleBeans.balance}
+                          {props.singleItem.balance}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                         <h4 className={styles.delete_item_memo}>
@@ -242,7 +242,7 @@ const DeleteItem = (props) => {
                             memo
                           </span>
                         </h4>
-                        <p>{props.singleBeans.balanceMessage}</p>
+                        <p>{props.singleItem.balanceMessage}</p>
                       </div>
 
                       <div
@@ -252,7 +252,7 @@ const DeleteItem = (props) => {
                           12：総合評価
                         </h3>
                         <p>
-                          {props.singleBeans.overall}
+                          {props.singleItem.overall}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                       </div>
@@ -263,12 +263,12 @@ const DeleteItem = (props) => {
                           13：TOTAL（+36）
                         </h3>
                         <p>
-                          {props.singleBeans.result}
+                          {props.singleItem.result}
                           <span className={styles.delete_yellow_color}>点</span>
                           <span>（＋３６）</span>
                         </p>
                         <p>
-                          {props.singleBeans.total}
+                          {props.singleItem.total}
                           <span className={styles.delete_yellow_color}>点</span>
                         </p>
                       </div>
@@ -279,7 +279,7 @@ const DeleteItem = (props) => {
                         <h3 className={styles.delete_item_title}>
                           14：味の印象
                         </h3>
-                        <p>{props.singleBeans.impression}</p>
+                        <p>{props.singleItem.impression}</p>
                       </div>
                     </div>
                     <div className={styles.delete_popup}>
@@ -314,9 +314,9 @@ export const getServerSideProps = async (context) => {
   const response = await fetch(
     `https://tasting-note.vercel.app/api/beans/${context.query.id}`
   );
-  const singleBeans = await response.json();
+  const singleItem = await response.json();
 
   return {
-    props: singleBeans,
+    props: singleItem,
   };
 };
