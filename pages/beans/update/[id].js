@@ -178,7 +178,7 @@ const UpDateItem = (props) => {
     setDefects(answer);
   }
   const loginUser = useAuth();
-  if (loginUser.email === props.singleItem.email) {
+  if (loginUser === props.singleItem.email) {
     return (
       <>
         <Head>
