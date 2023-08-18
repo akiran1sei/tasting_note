@@ -60,6 +60,7 @@ const New = () => {
       Number(defects);
     try {
       const response = // フォームの入力値をサーバーに送信する
+        // await fetch("http://localhost:3000/api/beans/create", {
         await fetch("https://tasting-note.vercel.app/api/beans/create", {
           method: "POST",
           body: JSON.stringify({

@@ -16,6 +16,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await fetch(
+        // "http://localhost:3000/api/user/login",
         "https://tasting-note.vercel.app/api/user/login",
         {
           method: "POST",
