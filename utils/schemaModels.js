@@ -34,6 +34,7 @@ const BeansSchema = new Schema({
   impression: String,
   result: String,
   total: String,
+  email: String,
 });
 
 const UserSchema = new Schema({
