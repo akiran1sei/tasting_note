@@ -1,12 +1,7 @@
 import Head from "next/head";
-import { Header } from "@/components/Header";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
-import Image from "next/image";
-// import jwt from "jsonwebtoken";
 
-// const secret_key = "tasting_coffee";
 const Home = () => {
   return (
     <>
@@ -16,7 +11,7 @@ const Home = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       </Head>
 
       <div className={styles.container}>
@@ -53,11 +48,3 @@ const Home = () => {
   );
 };
 export default Home;
-// export const getServerSideProps = async () => {
-//   const response = await fetch("https://tasting-note.vercel.app/api/beans/readall");
-//   const allItems = await response.json();
-
-//   return {
-//     props: allItems,
-//   };
-// };
