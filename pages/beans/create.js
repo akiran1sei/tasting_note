@@ -206,12 +206,7 @@ const New = () => {
               </div>
 
               <div className={styles.edit_data}>
-                <form
-                  onSubmit={handleSubmit}
-                  className={styles.edit_main}
-                  // action={"https://tasting-note.vercel.app/api/beans/create"}
-                  // method="post"
-                >
+                <form onSubmit={handleSubmit} className={styles.edit_main}>
                   <div className={styles.edit_list}>
                     {/* 選択式 */}
                     <div

@@ -13,7 +13,7 @@ const loginUser = async (req, res) => {
         const payload = {
           email: req.body.email,
         };
-        const token = jwt.sign(payload, secret_key, { expiresIn: "1h" });
+        const token = jwt.sign(payload, secret_key, { expiresIn: "24h" });
         console.log(token);
         return res.status(200).json({ message: "ログイン成功", token: token });
       } else {

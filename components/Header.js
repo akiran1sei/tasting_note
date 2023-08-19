@@ -14,7 +14,7 @@ export function Header() {
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       </Head>
       <header className={styles.header}>
         <div className={styles.header_title}>
