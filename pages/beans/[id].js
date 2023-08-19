@@ -226,7 +226,9 @@ const CoffeeSingleItem = (props) => {
                     </div>
                   </div>
                   <div className={styles.browse_return_btn_box}>
-                    <button className={styles.browse_return_btn}>戻る</button>
+                    <button className={styles.browse_return_btn}>
+                      <Link href={"selection"}>戻る</Link>
+                    </button>
                     <button className={styles.browse_edit_btn}>
                       <Link href={`update/${props.singleItem._id}`} passHref>
                         編集する
