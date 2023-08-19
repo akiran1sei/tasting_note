@@ -885,6 +885,7 @@ delete_popup
 -----browse_return_btn_box-----
  */
 .edit_submit_btn_box,
+.edit_return_btn_box,
 .browse_return_btn_box {
   width: 100%;
   position: relative;
