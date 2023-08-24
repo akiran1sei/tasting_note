@@ -5,11 +5,11 @@ import useAuth from "@/utils/useAuth";
 import styles from "@/styles/Home.module.css";
 import Link from "next/link";
 import Image from "next/image";
-
 const inter = Inter({ subsets: ["latin"] });
 
 const SelectionTop = (props) => {
-  const readItems = props.allItems.map((beans) => (
+  console.log(props);
+  const ReadAll = props.allItems.map((beans) => (
     <div className={styles.select_list} key={beans._id}>
       <div className={styles.select_btn_box}>
         <button className={styles.delete_btn}>
@@ -163,6 +163,7 @@ const SelectionTop = (props) => {
   ));
 
   const loginUser = useAuth();
+  // console.log(loginUser);
   if (loginUser) {
     return (
       <>
@@ -180,7 +181,8 @@ const SelectionTop = (props) => {
             <div className={styles.main_contents}>
               <div className={styles.select}>
                 <h1 className={styles.heading_title}>SELECT</h1>
-                {readItems}
+
+                {ReadAll}
               </div>
             </div>
           </main>
@@ -214,9 +216,7 @@ const SelectionTop = (props) => {
 };
 export default SelectionTop;
 export const getServerSideProps = async () => {
-  const response = await fetch(
-    "https://tasting-note.vercel.app/api/beans/readall"
-  );
+  const response = await fetch("http://localhost:3000/api/beans/readall");
   const allItems = await response.json();
 
   return {
