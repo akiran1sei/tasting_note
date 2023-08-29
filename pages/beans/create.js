@@ -39,6 +39,7 @@ const New = () => {
   // const [result, setResult] = useState();
   // const [total, setTotal] = useState("");
   const [impression, setImpression] = useState("");
+  const [name, setName] = useState();
   const [isEditContents, setIsEditContents] = useState(false);
   const router = useRouter();
   const handleEditListButton = () => {
@@ -91,6 +92,7 @@ const New = () => {
             total: Number(sum) + Number(36),
             result: sum,
             impression: impression,
+            name: name,
           }),
           headers: {
             Accept: "application/json",
@@ -209,6 +211,23 @@ const New = () => {
                 <form onSubmit={handleSubmit} className={styles.edit_main}>
                   <div className={styles.edit_list}>
                     {/* 選択式 */}
+                    <div className={`${styles.edit_item} ${styles.edit_name}`}>
+                      <label htmlFor="name" className={styles.edit_item_title}>
+                        作成者
+                      </label>
+                      <input
+                        className={styles.edit_input_name}
+                        type="text"
+                        name="name"
+                        id="name"
+                        width={300}
+                        height={50}
+                        placeholder="名前"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                      />
+                      <p>推奨の作成者名は、ユーザー名です。</p>
+                    </div>
                     <div
                       className={`${styles.edit_item} ${styles.edit_coffee}`}
                     >
