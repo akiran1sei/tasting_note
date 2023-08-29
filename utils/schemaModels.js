@@ -35,9 +35,8 @@ const BeansSchema = new Schema({
   result: String,
   total: String,
   email: String,
-  name: String,
 });
-
+BeansSchema.add({ name: String });
 const UserSchema = new Schema({
   name: {
     type: String,
