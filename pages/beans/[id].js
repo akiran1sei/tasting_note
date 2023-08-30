@@ -22,6 +22,15 @@ const CoffeeSingleItem = (props) => {
               <div className={styles.browse_data}>
                 <div className={styles.browse_main}>
                   <div className={styles.browse_list}>
+                    <p className={styles.browse_date}>
+                      {props.singleItem.date}
+                    </p>
+                    <div
+                      className={`${styles.browse_item} ${styles.browse_username}`}
+                    >
+                      <h3 className={styles.browse_item_title}>作成者</h3>
+                      <p>{props.singleItem.username}</p>
+                    </div>
                     <div
                       className={`${styles.browse_item} ${styles.browse_coffee}`}
                     >

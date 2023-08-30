@@ -46,6 +46,23 @@ const SelectionTop = (props) => {
           </Link>
         </button>
       </div>
+      <div className={`${styles.select_item} ${styles.select_date}`}>
+        <label htmlFor="date" className={styles.select_item_title}>
+          作成日
+          {/* DATE */}
+        </label>
+        <div className={styles.select_item_value}>
+          {/* {beans.date} */}
+          {beans.date}
+        </div>
+      </div>
+      <div className={`${styles.select_item} ${styles.select_username}`}>
+        <label htmlFor="username" className={styles.select_item_title}>
+          作成者
+          {/* USERNAME */}
+        </label>
+        <div className={styles.select_item_value}>{beans.username}</div>
+      </div>
       <div className={`${styles.select_item} ${styles.select_coffee}`}>
         <label htmlFor="name" className={styles.select_item_title}>
           珈琲豆の名 or 番号

@@ -63,8 +63,9 @@ const UpDateItem = (props) => {
   );
   const [overall, setOverall] = useState(props.singleItem.overall);
   const [error, setError] = useState();
-
   const [impression, setImpression] = useState(props.singleItem.impression);
+  const [username, setUserName] = useState(props.singleItem.username);
+  const [date, setDate] = useState(props.singleItem.date);
   const [isEditContents, setIsEditContents] = useState(false);
   const router = useRouter();
   const handleEditListButton = () => {
@@ -123,12 +124,16 @@ const UpDateItem = (props) => {
               total: Number(sum) + Number(36),
               result: sum,
               impression: impression,
+              username: username,
+              date: date,
             }),
           }
         );
       // バリデーション
 
-      if (!coffee) {
+      if (!username) {
+        return setError("未記入:作成者名を入力してください");
+      } else if (!coffee || null) {
         return setError("未記入:名前または、番号を入力してください");
       } else if (!roast || null) {
         return setError("未記入:roastを入力してください");
@@ -211,6 +216,7 @@ const UpDateItem = (props) => {
                     </button>
                   </div>
                   <ul className={styles.edit_number_list}>
+                    <li className={styles.edit_number_item}>作成者名</li>
                     <li className={styles.edit_number_item}>
                       1:コーヒー豆の名前 or 番号
                     </li>
@@ -240,7 +246,37 @@ const UpDateItem = (props) => {
 
                 <div className={styles.edit_data}>
                   <form onSubmit={handleSubmit} className={styles.edit_main}>
+                    <input
+                      type="date"
+                      name="date"
+                      className={styles.edit_date}
+                      placeholder="年／月／日"
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
+                    />
                     <div className={styles.edit_list}>
+                      <div
+                        className={`${styles.edit_item} ${styles.edit_username}`}
+                      >
+                        <label
+                          htmlFor="username"
+                          className={styles.edit_item_title}
+                        >
+                          作成者
+                        </label>
+                        <input
+                          className={styles.edit_input_name}
+                          type="text"
+                          name="username"
+                          id="username"
+                          width={300}
+                          height={50}
+                          placeholder="名前"
+                          value={username}
+                          onChange={(e) => setUserName(e.target.value)}
+                        />
+                        <p>推奨の作成者名は、ユーザー名です。</p>
+                      </div>
                       <div
                         className={`${styles.edit_item} ${styles.edit_coffee}`}
                       >

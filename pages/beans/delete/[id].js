@@ -51,6 +51,15 @@ const DeleteItem = (props) => {
                 <div className={styles.delete_data}>
                   <div className={styles.delete_main}>
                     <div className={styles.delete_list}>
+                      <p className={styles.delete_date}>
+                        {props.singleItem.date}
+                      </p>
+                      <div
+                        className={`${styles.delete_item} ${styles.delete_username}`}
+                      >
+                        <h3 className={styles.delete_item_title}>作成者</h3>
+                        <p>{props.singleItem.username}</p>
+                      </div>
                       <div
                         className={`${styles.delete_item} ${styles.delete_coffee}`}
                       >

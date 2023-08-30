@@ -36,11 +36,12 @@ const BeansSchema = new Schema(
     result: String,
     total: String,
     email: String,
-    name: String,
+    username: String,
+    date: String,
   },
   { timestamps: true }
 );
-BeansSchema.add({ name: String });
+// BeansSchema.add({ name: String });
 const UserSchema = new Schema({
   name: {
     type: String,
@@ -59,6 +60,8 @@ const UserSchema = new Schema({
 // const EmailSchema = new Schema({
 //   email: String,
 // });
+//データーベースをdb変数に代入
+
 export const BeansModel =
   mongoose.models.Beans || mongoose.model("Beans", BeansSchema);
 export const UserModel =
