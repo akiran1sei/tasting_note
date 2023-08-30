@@ -22,6 +22,15 @@ const CoffeeSingleItem = (props) => {
               <div className={styles.browse_data}>
                 <div className={styles.browse_main}>
                   <div className={styles.browse_list}>
+                    <p className={styles.browse_date}>
+                      {props.singleItem.date}
+                    </p>
+                    <div
+                      className={`${styles.browse_item} ${styles.browse_username}`}
+                    >
+                      <h3 className={styles.browse_item_title}>作成者</h3>
+                      <p>{props.singleItem.username}</p>
+                    </div>
                     <div
                       className={`${styles.browse_item} ${styles.browse_coffee}`}
                     >
@@ -254,7 +263,7 @@ export default CoffeeSingleItem;
 
 export const getServerSideProps = async (context) => {
   const response = await fetch(
-    `https://tasting-note.vercel.app/api/beans/${context.query.id}`
+    `http://localhost:3000/api/beans/${context.query.id}`
   );
   const singleItem = await response.json();
 

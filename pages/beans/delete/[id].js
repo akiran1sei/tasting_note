@@ -11,7 +11,7 @@ const DeleteItem = (props) => {
 
     try {
       const response = await fetch(
-        `https://tasting-note.vercel.app/api/beans/delete/${props.singleItem._id}`,
+        `http://localhost:3000/api/beans/delete/${props.singleItem._id}`,
         {
           method: "POST",
           headers: {
@@ -51,6 +51,15 @@ const DeleteItem = (props) => {
                 <div className={styles.delete_data}>
                   <div className={styles.delete_main}>
                     <div className={styles.delete_list}>
+                      <p className={styles.delete_date}>
+                        {props.singleItem.date}
+                      </p>
+                      <div
+                        className={`${styles.delete_item} ${styles.delete_username}`}
+                      >
+                        <h3 className={styles.delete_item_title}>作成者</h3>
+                        <p>{props.singleItem.username}</p>
+                      </div>
                       <div
                         className={`${styles.delete_item} ${styles.delete_coffee}`}
                       >
@@ -312,7 +321,7 @@ export default DeleteItem;
 
 export const getServerSideProps = async (context) => {
   const response = await fetch(
-    `https://tasting-note.vercel.app/api/beans/${context.query.id}`
+    `http://localhost:3000/api/beans/${context.query.id}`
   );
   const singleItem = await response.json();
 

@@ -39,12 +39,24 @@ const New = () => {
   // const [result, setResult] = useState();
   // const [total, setTotal] = useState("");
   const [impression, setImpression] = useState("");
+  const [username, setUserName] = useState("");
+
+  const [date, setDate] = useState("");
   const [isEditContents, setIsEditContents] = useState(false);
   const router = useRouter();
   const handleEditListButton = () => {
     setIsEditContents(!isEditContents);
   };
-
+  // function Mydate() {
+  //   let today = new Date();
+  //   let dd = String(today.getDate()).padStart(2, "0");
+  //   let mm = String(today.getMonth() + 1).padStart(2, "0"); //January is 0!
+  //   let yyyy = today.getFullYear();
+  //   today = mm + "/" + dd + "/" + yyyy;
+  //   return today;
+  // }
+  // const today = Mydate();
+  // setDate(today);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const sum =
@@ -59,7 +71,7 @@ const New = () => {
       Number(defects);
     try {
       const response = // フォームの入力値をサーバーに送信する
-        await fetch("https://tasting-note.vercel.app/api/beans/create", {
+        await fetch("http://localhost:3000/api/beans/create", {
           method: "POST",
           body: JSON.stringify({
             coffee: coffee,
@@ -91,6 +103,8 @@ const New = () => {
             total: Number(sum) + Number(36),
             result: sum,
             impression: impression,
+            username: username,
+            date: date,
           }),
           headers: {
             Accept: "application/json",
@@ -100,7 +114,9 @@ const New = () => {
         });
       // バリデーション
 
-      if (!coffee) {
+      if (!username) {
+        return setError("未記入:作成者名を入力してください");
+      } else if (!coffee || null) {
         return setError("未記入:名前または、番号を入力してください");
       } else if (!roast || null) {
         return setError("未記入:roastを入力してください");
@@ -182,6 +198,7 @@ const New = () => {
                   </button>
                 </div>
                 <ul className={styles.edit_number_list}>
+                  <li className={styles.edit_number_item}>作成者名</li>
                   <li className={styles.edit_number_item}>
                     1:コーヒー豆の名前 or 番号
                   </li>
@@ -207,8 +224,38 @@ const New = () => {
 
               <div className={styles.edit_data}>
                 <form onSubmit={handleSubmit} className={styles.edit_main}>
+                  <input
+                    type="date"
+                    name="date"
+                    id="date"
+                    className={styles.edit_date}
+                    value={date}
+                    onChange={(e) => setDate(e.target.value)}
+                  />
                   <div className={styles.edit_list}>
                     {/* 選択式 */}
+                    <div
+                      className={`${styles.edit_item} ${styles.edit_username}`}
+                    >
+                      <label
+                        htmlFor="username"
+                        className={styles.edit_item_title}
+                      >
+                        作成者
+                      </label>
+                      <input
+                        className={styles.edit_input_name}
+                        type="text"
+                        name="username"
+                        id="username"
+                        width={300}
+                        height={50}
+                        placeholder="名前"
+                        value={username}
+                        onChange={(e) => setUserName(e.target.value)}
+                      />
+                      <p>推奨の作成者名は、ユーザー名です。</p>
+                    </div>
                     <div
                       className={`${styles.edit_item} ${styles.edit_coffee}`}
                     >
@@ -893,9 +940,7 @@ const New = () => {
                         {error}
                       </span>
                     )}
-
                     {/* ErrorMessage */}
-
                     <button
                       type="submit"
                       className={styles.edit_submit_btn}
