@@ -613,16 +613,30 @@ delete_popup
   display: none;
 }
 .active > .edit_number_list {
-  display: flex;
+  /* display: flex;
   align-items: center;
   flex-wrap: wrap;
   align-content: center;
   padding: 1rem;
   gap: 1rem;
+  justify-content: center; */
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 1rem;
+  gap: 1rem;
   justify-content: center;
+  flex-direction: column;
 }
 .edit_number_item {
-  width: 300px;
+  width: auto;
+}
+/* edit_number_sup */
+.edit_number_sup {
+  margin-left: 1rem;
+  color: var(--color-font-base);
+  font-size: 16px;
 }
 @media screen and (min-width: 1000px) {
   .edit_number_list {
