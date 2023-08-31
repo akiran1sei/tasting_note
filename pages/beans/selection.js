@@ -47,7 +47,7 @@ const SelectionTop = (props) => {
         </button>
       </div>
       <div className={`${styles.select_item} ${styles.select_date}`}>
-        <label htmlFor="date" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           作成日
           {/* DATE */}
         </label>
@@ -57,28 +57,28 @@ const SelectionTop = (props) => {
         </div>
       </div>
       <div className={`${styles.select_item} ${styles.select_username}`}>
-        <label htmlFor="username" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           作成者
           {/* USERNAME */}
         </label>
         <div className={styles.select_item_value}>{beans.username}</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_coffee}`}>
-        <label htmlFor="name" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           珈琲豆の名 or 番号
           {/* NAME or NUMBER */}
         </label>
         <div className={styles.select_item_value}>{beans.coffee}</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_roast}`}>
-        <label htmlFor="roast" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           ロースト
           {/* ROAST */}
         </label>
         <div className={styles.select_item_value}>{beans.roast}％</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_aroma}`}>
-        <label htmlFor="aroma" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           アロマ
           {/* AROMA */}
         </label>
@@ -93,76 +93,74 @@ const SelectionTop = (props) => {
         </div>
       </div>
       <div className={`${styles.select_item} ${styles.select_defects}`}>
-        <label htmlFor="defects" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           欠点・瑕疵
           {/* DEFECTS */}
         </label>
         <div className={styles.select_item_value}>{beans.defects}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_cleancap}`}>
-        <label htmlFor="cleancap" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           カップの綺麗さ
           {/* CLEAN CAP */}
         </label>
         <div className={styles.select_item_value}>{beans.cleancap}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_sweet}`}>
-        <label htmlFor="sweet" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           甘さ
           {/* SWEET */}
         </label>
         <div className={styles.select_item_value}>{beans.sweet}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_acidity}`}>
-        <label htmlFor="acidity" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           酸の質
           {/* ACIDITY */}
         </label>
         <div className={styles.select_item_value}>{beans.acidity}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_mouthfeel}`}>
-        <label htmlFor="mouthfeel" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           口に含んだ質感
           {/* MOUTHFEEL */}
         </label>
         <div className={styles.select_item_value}>{beans.mouthfeel}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_flavor}`}>
-        <label htmlFor="flavor" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           フレーバー
           {/* FLAVOR */}
         </label>
         <div className={styles.select_item_value}>{beans.flavor}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_after}`}>
-        <label htmlFor="after" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           後味の印象度
           {/* AFTER */}
         </label>
         <div className={styles.select_item_value}>{beans.after}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_balance}`}>
-        <label htmlFor="balance" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           バランス
           {/* BALANCE */}
         </label>
         <div className={styles.select_item_value}>{beans.balance}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_overall}`}>
-        <label htmlFor="overall" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           総合評価
           {/* OVER ALL */}
         </label>
         <div className={styles.select_item_value}>{beans.overall}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_result}`}>
-        <label htmlFor="result" className={styles.select_item_title}>
-          RESULT
-        </label>
+        <label className={styles.select_item_title}>RESULT</label>
         <div className={styles.select_item_value}>{beans.result}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_total}`}>
-        <label htmlFor="total" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           TOTAL
           <br />
           （＋３６）
@@ -170,7 +168,7 @@ const SelectionTop = (props) => {
         <div className={styles.select_item_value}>{beans.total}点</div>
       </div>
       <div className={`${styles.select_item} ${styles.select_impression}`}>
-        <label htmlFor="impression" className={styles.select_item_title}>
+        <label className={styles.select_item_title}>
           味の印象
           {/* IMPRESSION */}
         </label>
