@@ -348,13 +348,25 @@
   display: block;
   text-align: center;
 }
-
+.select_item_text {
+  font-size: 14px;
+}
 .select_item_title,
 .select_sp_item_title {
   font-size: 16px;
   color: var(--color-bg-yellow);
 }
-
+.select_item_aroma_table {
+  margin: 0 auto;
+}
+.select_item_aroma_table_row {
+  line-height: 1em;
+}
+.select_item_aroma_header {
+  font-size: 14px;
+  color: var(--color-bg-yellow);
+  letter-spacing: -0.1em;
+}
 .select_aroma_value {
   font-size: 14px;
 }
@@ -743,10 +755,13 @@ delete_popup
 .edit_item_value,
 .browse_item_value,
 .delete_item_value {
-  text-align: center;
-  width: 150px;
-  margin: 0.5rem auto;
+  display: inline-block;
+  /* width: 150px; */
+  width: auto;
+  margin: 0.5rem;
+  /* margin: 0.5rem auto; */
   font-size: 16px;
+  text-align: center;
 }
 .edit_item_value_box,
 .browse_item_value_box,
@@ -754,6 +769,12 @@ delete_popup
   width: 100%;
   position: relative;
 }
+/* 
+-----aroma-----
+-edit_item_dry_box-
+-edit_item_curst_box-
+-edit_item_break_box-
+*/
 .edit_item.mouthfeel,
 .edit_item.acidity,
 .browse_item.mouthfeel,
@@ -810,7 +831,10 @@ delete_popup
   margin: 0.5rem 0 1rem 0;
   border-bottom: 3px solid var(--color-yellow);
 }
-
+/* edit_item_sub_title */
+.edit_item_sub_title {
+  font-size: 14px;
+}
 /* edit_item_message_box */
 .edit_item_message_box {
   width: 100%;

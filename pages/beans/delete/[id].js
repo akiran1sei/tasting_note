@@ -86,34 +86,99 @@ const DeleteItem = (props) => {
                       <div
                         className={`${styles.delete_item} ${styles.delete_aroma}`}
                       >
-                        <h3 className={styles.delete_item_title}>3：アロマ</h3>
-                        <p>
-                          <span className={styles.delete_yellow_color}>
-                            ドライ：
-                          </span>
-                          {props.singleItem.aromaDry}
-                          <span className={styles.delete_yellow_color}>点</span>
-                        </p>
-                        <p>
-                          <span className={styles.delete_yellow_color}>
-                            クラスト：
-                          </span>
-                          {props.singleItem.aromaCrust}
-                          <span className={styles.delete_yellow_color}>点</span>
-                        </p>
-                        <p>
-                          <span className={styles.delete_yellow_color}>
-                            ブレーク：
-                          </span>
-                          {props.singleItem.aromaBreak}
-                          <span className={styles.delete_yellow_color}>点</span>
-                        </p>
-                        <h4 className={styles.delete_item_memo}>
-                          <span className={styles.delete_yellow_color}>
-                            memo
-                          </span>
-                        </h4>
-                        <p>{props.singleItem.aromaMessage}</p>
+                        <h3 className={styles.delete_item_title}>3：アロマ </h3>
+                        <div className={styles.delete_item_value_box}>
+                          －３～３
+                          <br />
+                          <div className={styles.delete_item_dry_box}>
+                            <p className={styles.delete_item_sub_title}>
+                              ドライ
+                            </p>
+                            {/* ドライ（強さ） */}
+                            <div className={styles.delete_item_value_box}>
+                              <p className={styles.delete_item_value}>
+                                <h4 className={styles.delete_item_sub_title}>
+                                  （強さ）
+                                </h4>
+                                <br />
+                                {props.singleItem.aromaDryStrength}
+                                <span className={styles.delete_yellow_color}>
+                                  点
+                                </span>
+                              </p>
+                              {/* ドライ （質） */}
+                              <p className={styles.delete_item_value}>
+                                <h4 className={styles.delete_item_sub_title}>
+                                  （質）
+                                </h4>
+                                <br /> {props.singleItem.aromaDryQuality}
+                                <span className={styles.delete_yellow_color}>
+                                  点
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                          <div className={styles.delete_item_crust_box}>
+                            <p className={styles.delete_item_sub_title}>
+                              クラスト
+                            </p>
+                            <div className={styles.delete_item_value_box}>
+                              {/* クラスト（強さ） */}
+                              <p className={styles.delete_item_value}>
+                                <h4 className={styles.delete_item_sub_title}>
+                                  （強さ）
+                                </h4>
+                                <br />
+                                {props.singleItem.aromaCrustStrength}
+                                <span className={styles.delete_yellow_color}>
+                                  点
+                                </span>
+                              </p>
+                              {/* クラスト（質） */}
+                              <p className={styles.delete_item_value}>
+                                <h4 className={styles.delete_item_sub_title}>
+                                  （質）
+                                </h4>
+                                <br /> {props.singleItem.aromaCrustQuality}
+                                <span className={styles.delete_yellow_color}>
+                                  点
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                          <div className={styles.delete_item_break_box}>
+                            <p className={styles.delete_item_sub_title}>
+                              ブレーク
+                            </p>
+                            <div className={styles.delete_item_value_box}>
+                              {/* ブレーク（強さ） */}
+                              <p className={styles.delete_item_value}>
+                                <h4 className={styles.delete_item_sub_title}>
+                                  （強さ）
+                                </h4>
+                                <br /> {props.singleItem.aromaBreakStrength}
+                                <span className={styles.delete_yellow_color}>
+                                  点
+                                </span>
+                              </p>
+                              {/*  ブレーク（質） */}
+                              <p className={styles.delete_item_value}>
+                                <h4 className={styles.delete_item_sub_title}>
+                                  （質）
+                                </h4>
+                                <br /> {props.singleItem.aromaBreakQuality}
+                                <span className={styles.delete_yellow_color}>
+                                  点
+                                </span>
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div className={styles.delete_item_message_box}>
+                          <h4>memo</h4>
+                          <br />
+                          <p>{props.singleItem.aromaMessage}</p>
+                        </div>
                       </div>
                       <div
                         className={`${styles.delete_item} ${styles.delete_defects}`}

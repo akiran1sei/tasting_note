@@ -15,9 +15,25 @@ const UpDateItem = (props) => {
   const [roastMessage, setRoastMessage] = useState(
     props.singleItem.roastMessage
   );
-  const [aromaDry, setAromaDry] = useState(props.singleItem.aromaDry);
-  const [aromaCrust, setAromaCrust] = useState(props.singleItem.aromaCrust);
-  const [aromaBreak, setAromaBreak] = useState(props.singleItem.aromaBreak);
+  const [aromaDryStrength, setAromaDryStrength] = useState(
+    props.singleItem.aromaDryStrength
+  );
+  const [aromaCrustStrength, setAromaCrustStrength] = useState(
+    props.singleItem.aromaCrustStrength
+  );
+  const [aromaBreakStrength, setAromaBreakStrength] = useState(
+    props.singleItem.aromaBreakStrength
+  );
+  const [aromaDryQuality, setAromaDryQuality] = useState(
+    props.singleItem.aromaDryQuality
+  );
+  const [aromaCrustQuality, setAromaCrustQuality] = useState(
+    props.singleItem.aromaCrustQuality
+  );
+  const [aromaBreakQuality, setAromaBreakQuality] = useState(
+    props.singleItem.aromaBreakQuality
+  );
+
   const [aromaMessage, setAromaMessage] = useState(
     props.singleItem.aromaMessage
   );
@@ -98,9 +114,12 @@ const UpDateItem = (props) => {
               coffee: coffee,
               roast: roast,
               roastMessage: roastMessage,
-              aromaDry: aromaDry,
-              aromaCrust: aromaCrust,
-              aromaBreak: aromaBreak,
+              aromaDryStrength: aromaDryStrength,
+              aromaCrustStrength: aromaCrustStrength,
+              aromaBreakStrength: aromaBreakStrength,
+              aromaDryQuality: aromaDryQuality,
+              aromaCrustQuality: aromaCrustQuality,
+              aromaBreakQuality: aromaBreakQuality,
               aromaMessage: aromaMessage,
               defects: point * score * 4,
               defectsMessage: defectsMessage,
@@ -137,12 +156,18 @@ const UpDateItem = (props) => {
         return setError("未記入:名前または、番号を入力してください");
       } else if (!roast || null) {
         return setError("未記入:roastを入力してください");
-      } else if (!aromaDry || null) {
-        return setError("未記入:アロマのドライを入力してください");
-      } else if (!aromaCrust || null) {
-        return setError("未記入:アロマのクラストを入力してください");
-      } else if (!aromaBreak || null) {
-        return setError("未記入:アロマのブレイクを入力してください");
+      } else if (!aromaDryStrength || null) {
+        return setError("未記入:アロマのドライ（強さ）を入力してください");
+      } else if (!aromaCrustStrength || null) {
+        return setError("未記入:アロマのクラスト（強さ）を入力してください");
+      } else if (!aromaBreakStrength || null) {
+        return setError("未記入:アロマのブレイク（強さ）を入力してください");
+      } else if (!aromaDryQuality || null) {
+        return setError("未記入:アロマのドライ（質）を入力してください");
+      } else if (!aromaCrustQuality || null) {
+        return setError("未記入:アロマのクラスト（質）を入力してください");
+      } else if (!aromaBreakQuality || null) {
+        return setError("未記入:アロマのブレイク（質）を入力してください");
       } else if (!defects || null) {
         return setError("未記入:欠点などがなければ0と記入してください。");
       } else if (defects < 0) {
@@ -175,7 +200,7 @@ const UpDateItem = (props) => {
         router.push("/beans/selection");
       }
     } catch (error) {
-      alert("アイテム編編集失敗");
+      alert("アイテム作成失敗");
     }
   };
   function defectsAnswer() {
@@ -343,69 +368,195 @@ const UpDateItem = (props) => {
                           ></textarea>
                         </div>
                       </div>
+
                       <div
                         className={`${styles.edit_item} ${styles.edit_aroma}`}
                       >
                         <p className={styles.edit_item_title}>3：アロマ </p>
                         <div className={styles.edit_item_value_box}>
-                          <p className={styles.edit_item_value}>
-                            <label htmlFor="aroma-dry">ドライ </label>－３～３
-                            <select
-                              name="aroma-dry"
-                              id="aroma-dry"
-                              value={aromaDry}
-                              onChange={(e) => setAromaDry(e.target.value)}
-                            >
-                              <option></option>
-                              <option value={-3}>-3</option>
-                              <option value={-2}>-2</option>
-                              <option value={-1}>-1</option>
-                              <option value={0}>0</option>
-                              <option value={1}>1</option>
-                              <option value={2}>2</option>
-                              <option value={3}>3</option>
-                            </select>
-                          </p>
-
-                          <p className={styles.edit_item_value}>
-                            <label htmlFor="aroma_crust">クラスト</label>{" "}
-                            －３～３
-                            <select
-                              name="aroma_crust"
-                              id="aroma_crust"
-                              value={aromaCrust}
-                              onChange={(e) => setAromaCrust(e.target.value)}
-                            >
-                              <option></option>
-                              <option value={-3}>-3</option>
-                              <option value={-2}>-2</option>
-                              <option value={-1}>-1</option>
-                              <option value={0}>0</option>
-                              <option value={1}>1</option>
-                              <option value={2}>2</option>
-                              <option value={3}>3</option>
-                            </select>
-                          </p>
-
-                          <p className={styles.edit_item_value}>
-                            <label htmlFor="aroma_break">ブレーク</label>{" "}
-                            －３～３
-                            <select
-                              name="aroma_break"
-                              id="aroma_break"
-                              value={aromaBreak}
-                              onChange={(e) => setAromaBreak(e.target.value)}
-                            >
-                              <option></option>
-                              <option value={-3}>-3</option>
-                              <option value={-2}>-2</option>
-                              <option value={-1}>-1</option>
-                              <option value={0}>0</option>
-                              <option value={1}>1</option>
-                              <option value={2}>2</option>
-                              <option value={3}>3</option>
-                            </select>
-                          </p>
+                          －３～３
+                          <br />
+                          <div className={styles.edit_item_dry_box}>
+                            <p className={styles.edit_item_sub_title}>ドライ</p>
+                            {/* ドライ（強さ） */}
+                            <div className={styles.edit_item_value_box}>
+                              <p className={styles.edit_item_value}>
+                                <label
+                                  htmlFor="aroma-dry-strength"
+                                  className={styles.edit_item_sub_title}
+                                >
+                                  （強さ）
+                                </label>
+                                <br />
+                                <select
+                                  name="aroma-dry-strength"
+                                  id="aroma-dry-strength"
+                                  value={aromaDryStrength}
+                                  onChange={(e) =>
+                                    setAromaDryStrength(e.target.value)
+                                  }
+                                >
+                                  <option></option>
+                                  <option value={-3}>-3</option>
+                                  <option value={-2}>-2</option>
+                                  <option value={-1}>-1</option>
+                                  <option value={0}>0</option>
+                                  <option value={1}>1</option>
+                                  <option value={2}>2</option>
+                                  <option value={3}>3</option>
+                                </select>
+                              </p>
+                              {/* ドライ （質） */}
+                              <p className={styles.edit_item_value}>
+                                <label
+                                  htmlFor="aroma-dry-quality"
+                                  className={styles.edit_item_sub_title}
+                                >
+                                  （質）
+                                </label>
+                                <br />
+                                <select
+                                  name="aroma-dry-quality"
+                                  id="aroma-dry-quality"
+                                  value={aromaDryQuality}
+                                  onChange={(e) =>
+                                    setAromaDryQuality(e.target.value)
+                                  }
+                                >
+                                  <option></option>
+                                  <option value={-3}>-3</option>
+                                  <option value={-2}>-2</option>
+                                  <option value={-1}>-1</option>
+                                  <option value={0}>0</option>
+                                  <option value={1}>1</option>
+                                  <option value={2}>2</option>
+                                  <option value={3}>3</option>
+                                </select>
+                              </p>
+                            </div>
+                          </div>
+                          <div className={styles.edit_item_crust_box}>
+                            <p className={styles.edit_item_sub_title}>
+                              クラスト
+                            </p>
+                            <div className={styles.edit_item_value_box}>
+                              {/* クラスト（強さ） */}
+                              <p className={styles.edit_item_value}>
+                                <label
+                                  htmlFor="aroma_crust-strength"
+                                  className={styles.edit_item_sub_title}
+                                >
+                                  （強さ）
+                                </label>
+                                <br />
+                                <select
+                                  name="aroma_crust-strength"
+                                  id="aroma_crust-strength"
+                                  value={aromaCrustStrength}
+                                  onChange={(e) =>
+                                    setAromaCrustStrength(e.target.value)
+                                  }
+                                >
+                                  <option></option>
+                                  <option value={-3}>-3</option>
+                                  <option value={-2}>-2</option>
+                                  <option value={-1}>-1</option>
+                                  <option value={0}>0</option>
+                                  <option value={1}>1</option>
+                                  <option value={2}>2</option>
+                                  <option value={3}>3</option>
+                                </select>
+                              </p>
+                              {/* クラスト（質） */}
+                              <p className={styles.edit_item_value}>
+                                <label
+                                  htmlFor="aroma_crust-quality"
+                                  className={styles.edit_item_sub_title}
+                                >
+                                  （質）
+                                </label>
+                                <br />
+                                <select
+                                  name="aroma_crust-quality"
+                                  id="aroma_crust-quality"
+                                  value={aromaCrustQuality}
+                                  onChange={(e) =>
+                                    setAromaCrustQuality(e.target.value)
+                                  }
+                                >
+                                  <option></option>
+                                  <option value={-3}>-3</option>
+                                  <option value={-2}>-2</option>
+                                  <option value={-1}>-1</option>
+                                  <option value={0}>0</option>
+                                  <option value={1}>1</option>
+                                  <option value={2}>2</option>
+                                  <option value={3}>3</option>
+                                </select>
+                              </p>
+                            </div>
+                          </div>
+                          <div className={styles.edit_item_break_box}>
+                            <p className={styles.edit_item_sub_title}>
+                              ブレーク
+                            </p>
+                            <div className={styles.edit_item_value_box}>
+                              {/* ブレーク（強さ） */}
+                              <p className={styles.edit_item_value}>
+                                <label
+                                  htmlFor="aroma_break-strength"
+                                  className={styles.edit_item_sub_title}
+                                >
+                                  （強さ）
+                                </label>
+                                <br />
+                                <select
+                                  name="aroma_break-strength"
+                                  id="aroma_break-strength"
+                                  value={aromaBreakStrength}
+                                  onChange={(e) =>
+                                    setAromaBreakStrength(e.target.value)
+                                  }
+                                >
+                                  <option></option>
+                                  <option value={-3}>-3</option>
+                                  <option value={-2}>-2</option>
+                                  <option value={-1}>-1</option>
+                                  <option value={0}>0</option>
+                                  <option value={1}>1</option>
+                                  <option value={2}>2</option>
+                                  <option value={3}>3</option>
+                                </select>
+                              </p>
+                              {/*  ブレーク（質） */}
+                              <p className={styles.edit_item_value}>
+                                <label
+                                  htmlFor="aroma_break-quality"
+                                  className={styles.edit_item_sub_title}
+                                >
+                                  （質）
+                                </label>
+                                <br />
+                                <select
+                                  name="aroma_break-quality"
+                                  id="aroma_break-quality"
+                                  value={aromaBreakQuality}
+                                  onChange={(e) =>
+                                    setAromaBreakQuality(e.target.value)
+                                  }
+                                >
+                                  <option></option>
+                                  <option value={-3}>-3</option>
+                                  <option value={-2}>-2</option>
+                                  <option value={-1}>-1</option>
+                                  <option value={0}>0</option>
+                                  <option value={1}>1</option>
+                                  <option value={2}>2</option>
+                                  <option value={3}>3</option>
+                                </select>
+                              </p>
+                            </div>
+                          </div>
                         </div>
                         <div className={styles.edit_item_message_box}>
                           <label htmlFor="aroma_message">memo</label>
@@ -420,6 +571,7 @@ const UpDateItem = (props) => {
                           ></textarea>
                         </div>
                       </div>
+
                       <div
                         className={`${styles.edit_item} ${styles.edit_defects}`}
                       >
