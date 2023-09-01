@@ -214,24 +214,84 @@ const New = () => {
                   <li className={styles.edit_number_item}>作成者名</li>
                   <li className={styles.edit_number_item}>
                     1:コーヒー豆の名前 or 番号
+                    <span>豆の名前、又は、番号</span>
                   </li>
-                  <li className={styles.edit_number_item}>2:ロースト</li>
-                  <li className={styles.edit_number_item}>3:アロマ</li>
-                  <li className={styles.edit_number_item}>4:欠点・瑕疵</li>
-                  <li className={styles.edit_number_item}>5:カップの綺麗さ</li>
-                  <li className={styles.edit_number_item}>6:甘さ</li>
-                  <li className={styles.edit_number_item}>7:酸の質</li>
-                  <li className={styles.edit_number_item}>8:口に含んだ質感</li>
-                  <li className={styles.edit_number_item}>9:フレーバー</li>
-                  <li className={styles.edit_number_item}>10:後味の印象度</li>
-                  <li className={styles.edit_number_item}>11:バランス</li>
-                  <li className={styles.edit_number_item}>12:総合評価</li>
+                  <li className={styles.edit_number_item}>
+                    2:ロースト <span>焙煎具合</span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    3:アロマ
+                    <span>
+                      粉の状態の『ドライ』
+                      <br />
+                      湯を注いだ直後の『クラスト』
+                      <br />
+                      混ぜた後の『ブレーク』
+                      <br />
+                      の３つで香りの強さ（左）と質（右）を評価
+                    </span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    4:欠点・瑕疵
+                    <span>
+                      スペシャルティコーヒーなどは、欠点・瑕疵がないことが多く『０』で進めることが多い
+                    </span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    5:カップの綺麗さ<span>味わいの透明度</span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    6:甘さ
+                    <span>味わいに甘味の印象が強ければ強い程よいとされる</span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    7:酸の質
+                    <span>
+                      H（high）M（middle）L（low）で酸の強さを計り、得点部分には質を評価。
+                    </span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    8:口に含んだ質感
+                    <span>
+                      舌触りの滑らかさ。
+                      H（high）M（middle）L（low）でボディの強さを表わす。
+                    </span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    9:フレーバー<span>風味の質を評価する</span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    10:後味の印象度
+                    <span>後味は心地よいか、そうでないか評価。</span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    11:バランス
+                    <span>
+                      「５～１０」の要素に悪目立ちしているものがなく、全体のバランスが良い程加点。
+                    </span>
+                  </li>
+                  <li className={styles.edit_number_item}>
+                    12:総合評価
+                    <span>
+                      味わいの奥行など項目にない点にも着目し、ここまでの評価に囚われず、主観で付ける。
+                    </span>
+                  </li>
                   <li className={styles.edit_number_item}>
                     13:TOTAL
                     <br />
                     （+36）
+                    <span>
+                      「４～１２」の得点に、定数３６点を足した１００点満点で評価。
+                    </span>
                   </li>
-                  <li className={styles.edit_number_item}>14:味の印象</li>
+                  <li className={styles.edit_number_item}>
+                    14:味の印象
+                    <span>
+                      具体的な味の印象を記入。フレーバーの表現もカッピングの重要な目的。
+                      <br />
+                      冷めていく過程で、味わいがどのように変化したかも都度メモしておくとよい。
+                    </span>
+                  </li>
                 </ul>
               </div>
 
