@@ -1103,7 +1103,7 @@ const New = () => {
                     </div>
                     <div className={`${styles.edit_item} ${styles.edit_total}`}>
                       <div className=""></div>
-                      <label htmlFor="total" className={styles.edit_item_title}>
+                      <label className={styles.edit_item_title}>
                         13：TOTAL（+36）
                       </label>
                       <div className={styles.edit_result}>
