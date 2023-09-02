@@ -160,6 +160,7 @@
   flex-wrap: wrap;
   align-content: center;
   border-radius: 5px;
+  justify-content: center;
 }
 .button_item {
   width: 30px;
@@ -356,18 +357,22 @@
   font-size: 16px;
   color: var(--color-bg-yellow);
 }
-.select_item_aroma_table {
+.select_item_aroma_table,
+.browse_item_aroma_table {
   margin: 0 auto;
 }
-.select_item_aroma_table_row {
+.select_item_aroma_table_row,
+.browse_item_aroma_table_row {
   line-height: 1em;
 }
-.select_item_aroma_header {
+.select_item_aroma_header,
+.browse_item_aroma_header {
   font-size: 14px;
   color: var(--color-bg-yellow);
   letter-spacing: -0.1em;
 }
-.select_aroma_value {
+.select_aroma_value,
+.browse_aroma_value {
   font-size: 14px;
 }
 
@@ -377,8 +382,8 @@
 }
 .select_btn,
 .delete_btn {
-  width: 30px;
-  height: 30px;
+  width: 45px;
+  height: auto;
   border: 2px solid var(--color-yellow);
   border-radius: 5px;
   box-shadow: 2px 2px 3px var(--color-box-shadow);
@@ -626,19 +631,27 @@ delete_popup
 }
 .active > .edit_number_list {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
-  align-content: center;
+  align-content: flex-start;
   padding: 1rem;
   gap: 1rem;
   justify-content: center;
+  flex-direction: column;
 }
+
 .edit_number_item {
-  width: 300px;
+  width: auto;
+}
+/* edit_number_sup */
+.edit_number_sup {
+  margin-left: 1rem;
+  color: var(--color-font-base);
+  font-size: 16px;
 }
 @media screen and (min-width: 1000px) {
   .edit_number_list {
-    text-align: center;
+    text-align: left;
   }
 }
 
@@ -681,8 +694,9 @@ delete_popup
   width: 100%;
   height: auto;
   position: relative;
-  display: grid;
-  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   flex-wrap: wrap;
   align-content: center;
   gap: 1rem;
@@ -717,11 +731,11 @@ delete_popup
 .edit_input_name {
   width: 90%;
 }
-@media screen and (min-width: 1000px) {
+/* @media screen and (min-width: 1000px) {
   .edit_input_name {
     width: 50%;
   }
-}
+} */
 .edit_input_range {
   width: 200px;
 }
@@ -737,6 +751,7 @@ delete_popup
 .browse_item,
 .delete_item {
   width: 100%;
+  max-width: 500px;
   height: 100%;
   margin-bottom: 1rem;
   padding: 1rem 0;
@@ -747,6 +762,7 @@ delete_popup
   justify-content: space-between;
   position: relative;
 }
+
 .edit_overall,
 .browse_overall,
 .delete_overall {
@@ -783,7 +799,7 @@ delete_popup
 .delete_item.acidity {
   justify-content: flex-start !important;
 }
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) {
   .edit_item:not(
       .edit_item:first-child,
       .edit_item:nth-child(2),
@@ -818,7 +834,7 @@ delete_popup
   .delete_item:nth-child(13) {
     width: 100% !important;
   }
-}
+} */
 
 /* 
 -----edit_item_title-----
@@ -876,13 +892,13 @@ delete_popup
 }
 /* edit_result */
 .edit_result {
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin: 2rem 1rem;
   padding: 1rem;
   color: var(--color-font-base);
   border-radius: 2%;
@@ -955,9 +971,10 @@ delete_popup
 .edit_submit_btn,
 .browse_edit_btn,
 .delete_edit_btn {
-  background: var(--color-bg-yellow);
+  background: var(--color-bg-base);
   padding: 0.5rem 1rem;
   color: var(--color-font-white);
+  border: 2px solid var(--color-yellow);
   border-radius: 5%;
   font-size: x-large;
   box-shadow: 3px 3px 3px #3333334d;
@@ -1017,6 +1034,7 @@ grid-layout 768px
 .browse_date,
 .delete_date {
   position: absolute;
+  top: 0;
   right: 0;
 }
 /* 

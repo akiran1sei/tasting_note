@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { Header } from "@/components/Header";
 import Link from "next/link";
+import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 
 const CoffeeSingleItem = (props) => {
@@ -54,94 +55,53 @@ const CoffeeSingleItem = (props) => {
                       className={`${styles.browse_item} ${styles.browse_aroma}`}
                     >
                       <h3 className={styles.browse_item_title}>3：アロマ </h3>
-                      <div className={styles.browse_item_value_box}>
-                        －３～３
-                        <br />
-                        <div className={styles.browse_item_dry_box}>
-                          <p className={styles.browse_item_sub_title}>ドライ</p>
-                          {/* ドライ（強さ） */}
-                          <div className={styles.browse_item_value_box}>
-                            <p className={styles.browse_item_value}>
-                              <h4 className={styles.browse_item_sub_title}>
-                                （強さ）
-                              </h4>
-                              <br />
-                              {props.singleItem.aromaDryStrength}
-                              <span className={styles.browse_yellow_color}>
-                                点
-                              </span>
-                            </p>
-                            {/* ドライ （質） */}
-                            <p className={styles.browse_item_value}>
-                              <h4 className={styles.browse_item_sub_title}>
-                                （質）
-                              </h4>
-                              <br /> {props.singleItem.aromaDryQuality}
-                              <span className={styles.browse_yellow_color}>
-                                点
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                        <div className={styles.browse_item_crust_box}>
-                          <p className={styles.browse_item_sub_title}>
-                            クラスト
-                          </p>
-                          <div className={styles.browse_item_value_box}>
-                            {/* クラスト（強さ） */}
-                            <p className={styles.browse_item_value}>
-                              <h4 className={styles.browse_item_sub_title}>
-                                （強さ）
-                              </h4>
-                              <br />
-                              {props.singleItem.aromaCrustStrength}
-                              <span className={styles.browse_yellow_color}>
-                                点
-                              </span>
-                            </p>
-                            {/* クラスト（質） */}
-                            <p className={styles.browse_item_value}>
-                              <h4 className={styles.browse_item_sub_title}>
-                                （質）
-                              </h4>
-                              <br /> {props.singleItem.aromaCrustQuality}
-                              <span className={styles.browse_yellow_color}>
-                                点
-                              </span>
-                            </p>
-                          </div>
-                        </div>
-                        <div className={styles.browse_item_break_box}>
-                          <p className={styles.browse_item_sub_title}>
-                            ブレーク
-                          </p>
-                          <div className={styles.browse_item_value_box}>
-                            {/* ブレーク（強さ） */}
-                            <p className={styles.browse_item_value}>
-                              <h4 className={styles.browse_item_sub_title}>
-                                （強さ）
-                              </h4>
-                              <br /> {props.singleItem.aromaBreakStrength}
-                              <span className={styles.browse_yellow_color}>
-                                点
-                              </span>
-                            </p>
-                            {/*  ブレーク（質） */}
-                            <p className={styles.browse_item_value}>
-                              <h4 className={styles.browse_item_sub_title}>
-                                （質）
-                              </h4>
-                              <br /> {props.singleItem.aromaBreakQuality}
-                              <span className={styles.browse_yellow_color}>
-                                点
-                              </span>
-                            </p>
-                          </div>
-                        </div>
+
+                      <div className={styles.browse_item_value}>
+                        <p className={styles.browse_item_text}>単位(点)</p>
+                        <table className={styles.browse_item_aroma_table}>
+                          <thead>
+                            <tr>
+                              <th></th>
+                              <th className={styles.browse_item_aroma_header}>
+                                強さ
+                              </th>
+                              <th className={styles.browse_item_aroma_header}>
+                                ／質
+                              </th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr className={styles.browse_item_aroma_table_row}>
+                              <th className={styles.browse_item_aroma_header}>
+                                D
+                              </th>
+                              <td>{props.singleItem.aromaDryStrength}</td>
+                              <td>{props.singleItem.aromaDryQuality}</td>
+                            </tr>
+                            <tr className={styles.browse_item_aroma_table_row}>
+                              <th className={styles.browse_item_aroma_header}>
+                                C
+                              </th>
+                              <td>{props.singleItem.aromaCrustStrength}</td>
+                              <td>{props.singleItem.aromaCrustQuality}</td>
+                            </tr>
+                            <tr className={styles.browse_item_aroma_table_row}>
+                              <th className={styles.browse_item_aroma_header}>
+                                B
+                              </th>
+                              <td>{props.singleItem.aromaBreakStrength}</td>
+                              <td>{props.singleItem.aromaBreakQuality}</td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                       <div className={styles.browse_item_message_box}>
-                        <h4>memo</h4>
-                        <br />
+                        <h4 className={styles.browse_item_memo}>
+                          <span className={styles.browse_yellow_color}>
+                            memo
+                          </span>
+                        </h4>
+
                         <p>{props.singleItem.aromaMessage}</p>
                       </div>
                     </div>
@@ -306,12 +266,24 @@ const CoffeeSingleItem = (props) => {
                     </button>
                     <button className={styles.browse_edit_btn}>
                       <Link href={`update/${props.singleItem._id}`} passHref>
-                        編集する
+                        <Image
+                          src="../images/edit_FILL0_wght400_GRAD0_opsz48.svg"
+                          alt="編集ボタン"
+                          width={48}
+                          height={48}
+                          priority
+                        />
                       </Link>
                     </button>
                     <button className={styles.browse_edit_btn}>
                       <Link href={`delete/${props.singleItem._id}`} passHref>
-                        削除する
+                        <Image
+                          src="../images/delete_FILL0_wght400_GRAD0_opsz48.svg"
+                          alt="削除ボタン"
+                          width={48}
+                          height={48}
+                          priority
+                        />
                       </Link>
                     </button>
                   </div>
