@@ -6,12 +6,16 @@ const Schema = mongoose.Schema;
 
 const BeansSchema = new Schema(
   {
+    username: String,
     coffee: String,
     roast: String,
     roastMessage: String,
-    aromaDry: String,
-    aromaCrust: String,
-    aromaBreak: String,
+    aromaDryStrength: String,
+    aromaCrustStrength: String,
+    aromaBreakStrength: String,
+    aromaDryQuality: String,
+    aromaCrustQuality: String,
+    aromaBreakQuality: String,
     aromaMessage: String,
     defects: String,
     defectsMessage: String,
@@ -36,7 +40,6 @@ const BeansSchema = new Schema(
     result: String,
     total: String,
     email: String,
-    username: String,
     date: String,
   },
   { timestamps: true }
