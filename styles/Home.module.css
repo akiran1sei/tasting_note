@@ -349,7 +349,9 @@
   display: block;
   text-align: center;
 }
-.select_item_text {
+.select_item_text,
+.browse_item_text,
+.delete_item_text {
   font-size: 14px;
 }
 .select_item_title,
@@ -357,22 +359,30 @@
   font-size: 16px;
   color: var(--color-bg-yellow);
 }
+/*-----select_item_aroma_table
+      browse_item_aroma_table
+      delete_item_aroma_table
+-----*/
 .select_item_aroma_table,
-.browse_item_aroma_table {
+.browse_item_aroma_table,
+.delete_item_aroma_table {
   margin: 0 auto;
 }
 .select_item_aroma_table_row,
-.browse_item_aroma_table_row {
+.browse_item_aroma_table_row,
+.delete_item_aroma_table_row {
   line-height: 1em;
 }
 .select_item_aroma_header,
-.browse_item_aroma_header {
+.browse_item_aroma_header,
+.delete_item_aroma_header {
   font-size: 14px;
   color: var(--color-bg-yellow);
   letter-spacing: -0.1em;
 }
 .select_aroma_value,
-.browse_aroma_value {
+.browse_aroma_value,
+.delete_aroma_value {
   font-size: 14px;
 }
 
@@ -630,7 +640,6 @@ delete_popup
   display: none;
 }
 .active > .edit_number_list {
-
   display: flex;
   align-items: flex-start;
 
@@ -982,7 +991,8 @@ delete_popup
 .delete_edit_btn {
   background: var(--color-bg-base);
   padding: 0.5rem 1rem;
-  color: var(--color-font-white);
+  /* color: var(--color-font-white); */
+  color: var(--color-font-yellow);
   border: 2px solid var(--color-yellow);
   border-radius: 5%;
   font-size: x-large;
