@@ -1158,7 +1158,7 @@ const UpDateItem = (props) => {
                       >
                         <div className=""></div>
                         <label
-                          htmlFor="total"
+                          // htmlFor="total"
                           className={styles.edit_item_title}
                         >
                           13：TOTAL（+36）

@@ -640,6 +640,15 @@ delete_popup
   display: none;
 }
 .active > .edit_number_list {
+
+  display: flex;
+  align-items: flex-start;
+
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding: 1rem;
+  gap: 1rem;
+  justify-content: center; */
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
