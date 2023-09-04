@@ -756,6 +756,9 @@ delete_popup
 } */
 .edit_input_range {
   width: 200px;
+  -webkit-appearance: none;
+    appearance: none;
+    background: var(--color-linear-gradient-linear);
 }
 
 /* 
