@@ -27,16 +27,17 @@ const Home = () => {
                 <ul className={styles.top_nav_list}>
                   <li className={styles.top_nav_item}>
                     {/* ログイン認証ページ */}
-                    <button>
-                      <Link href={"/user/login"}> START</Link>
+                    <button className={styles.start_btn}>
+                      {/* <Link href={"/user/login"}> START</Link> */}
+                      <Link href={"/beans/selection"}> START</Link>
                     </button>
                   </li>
                   {/*アカウント登録ページ  */}
-                  <li className={styles.top_nav_item}>
+                  {/* <li className={styles.top_nav_item}>
                     <button>
                       <Link href={"/user/register"}>Sing Up</Link>
                     </button>
-                  </li>
+                  </li> */}
                 </ul>
                 <div></div>
               </nav>

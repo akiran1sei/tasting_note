@@ -1,6 +1,6 @@
 import connectDB from "@/utils/database";
 import { BeansModel } from "@/utils/schemaModels";
-import auth from "@/utils/auth";
+// import auth from "@/utils/auth";
 
 const Delete = async (req, res) => {
   try {
@@ -17,5 +17,5 @@ const Delete = async (req, res) => {
   }
 };
 
-export default auth(Delete);
-// export default Delete;
+// export default auth(Delete);
+export default Delete;

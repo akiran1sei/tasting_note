@@ -1,4 +1,4 @@
-import auth from "@/utils/auth.js";
+// import auth from "@/utils/auth.js";
 import connectDB from "@/utils/database";
 import { BeansModel } from "@/utils/schemaModels";
 const createBeans = async (req, res) => {
@@ -12,4 +12,5 @@ const createBeans = async (req, res) => {
   }
 };
 
-export default auth(createBeans);
+// export default auth(createBeans);
+export default createBeans;

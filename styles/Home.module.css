@@ -270,7 +270,8 @@
   align-items: center;
   padding: 2rem 0;
 }
-.login_btn {
+.login_btn,
+.start_btn {
   padding: 0 1rem;
   font-size: 24px;
 }
@@ -757,8 +758,8 @@ delete_popup
 .edit_input_range {
   width: 200px;
   -webkit-appearance: none;
-    appearance: none;
-    background: var(--color-linear-gradient-linear);
+  appearance: none;
+  background: var(--color-linear-gradient-linear);
 }
 
 /* 
@@ -1272,6 +1273,7 @@ grid-layout 768px
   text-align: center;
 }
 .login_btn,
+.start_btn,
 .register_btn {
   background: var(--color-bg-base);
   padding: 0.5rem 1rem;
@@ -1282,6 +1284,7 @@ grid-layout 768px
   box-shadow: 3px 3px 3px #3333334d;
 }
 .login_btn:active,
+.start_btn:active,
 .register_btn:active {
   transform: translate(2px, 2px);
   box-shadow: inset 3px 3px 3px var(--color-black);

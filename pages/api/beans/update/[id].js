@@ -1,14 +1,14 @@
 import connectDB from "../../../../utils/database";
 import { BeansModel } from "../../../../utils/schemaModels";
-import auth from "../../../../utils/auth";
+// import auth from "../../../../utils/auth";
 
 const updateItem = async (req, res) => {
   try {
     await connectDB();
     const singleItem = await BeansModel.findById(req.query.id);
     if (singleItem.email === req.body.email) {
-    await BeansModel.updateOne({ _id: req.query.id }, req.body);
-    return res.status(200).json({ message: "アイテム編集成功" });
+      await BeansModel.updateOne({ _id: req.query.id }, req.body);
+      return res.status(200).json({ message: "アイテム編集成功" });
     } else {
       throw new Error();
     }
@@ -17,5 +17,5 @@ const updateItem = async (req, res) => {
   }
 };
 
-// export default updateItem;
-export default auth(updateItem);
+export default updateItem;
+// export default auth(updateItem);
