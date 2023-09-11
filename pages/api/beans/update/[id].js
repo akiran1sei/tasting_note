@@ -6,7 +6,8 @@ const updateItem = async (req, res) => {
   try {
     await connectDB();
     const singleItem = await BeansModel.findById(req.query.id);
-    if (singleItem.email === req.body.email) {
+    // if (singleItem.email === req.body.email) {
+    if (singleItem) {
       await BeansModel.updateOne({ _id: req.query.id }, req.body);
       return res.status(200).json({ message: "アイテム編集成功" });
     } else {
